@@ -5,7 +5,10 @@ body {
   margin-top: auto;
   margin-bottom: -24px;
 }
-
+#head-x{
+  margin-top: -8px;
+  font-size: 1.9rem
+}
 .title {
   margin-top: 50px;
   margin-bottom: 2px;
