@@ -1,0 +1,192 @@
+.clock {
+    border: 2px solid #8bc5ff;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 14px;
+    height: 200px;
+    padding: 21.8px;
+    width: 200px;
+}
+.clock-user {
+    border: 2px solid #c6ffba;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 14px;
+    height: 200px;
+    padding: 21.8px;
+    width: 200px;
+}
+
+.center {
+    border-radius: 50%;
+    background-color: #000;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-top: 69px;
+    margin-left: 67px;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+    background-color: #8bc5ff;
+    position: absolute;
+    transform-origin: bottom center;
+    left: calc(50% - 4px);
+    transition: transform 0.5s ease-in-out;
+}
+.second-hand-user {
+    background-color: #c6ffba;
+    position: absolute;
+    transform-origin: bottom center;
+    left: calc(50% - 4px);
+    transition: transform 0.5s ease-in-out;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 60px;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 2.8px;
+    background-color: #ff2d2d;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 70px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 2.9px;
+    background-color: #fff;
+
+}
+
+.second-hand {
+    width: 2px;
+    height: 60px;
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 4px;
+}
+
+.card {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.227);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.45);
+    margin: 20px;
+    margin-top: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-image: linear-gradient(#00274e, rgb(0, 0, 0));
+    border: 0px;
+}
+
+.card-header-users {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 65px;
+    padding: 14px;
+    background-image: linear-gradient(#00521b, rgb(0, 0, 0));
+}
+
+.card-content {
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #56000094; */
+    font-size: 14px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.418), #00274e5f); */
+    background-color: #0000006f;
+    border-radius: 40px;
+    color: #8bc5ff;
+}
+
+.card-footer-users {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.22), #00521b); */
+    background-color: #0000006f;
+    border-radius: 40px;
+    color: #c6ffba;
+    padding: 6px;
+}
+
+/* Page styles */
+body {
+    margin-right: 10px !important;
+    margin-top: 26px !important;
+    margin-bottom: 30px !important;
+    background-color: #ffffff1a;
+    text-align: center;
+    padding: 10px;
+    height: 390px;
+    width: 358px;
+    color: #eaffdf;
+    border-radius: 8px;
+    box-shadow: 1px 3px 7px rgba(255, 255, 255, 0.45);
+}
+
+
+h1 {
+    margin-top: 7px;
+}
+
+
+
+
+#card {
+    height: 390px;
+    width: 344px;
+    background-color: #ffffff1a;
+    border-radius: 8px;
+    box-shadow: 1px 3px 7px rgba(255, 255, 255, 0.45);
+
+    margin-left: 10px;
+    margin-top: 26px;
+    margin-bottom: 30px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+#card-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#card-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#card-content {
+    margin-bottom: 20px;
+}
+
+#card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+    font-size: 14px;
+}

@@ -1,0 +1,21 @@
+<body
+  class="container-fluid p-4"
+  style="background-color: #00274e"
+  *ngIf="!isUser"
+>
+  <h1 class="text" style="color: #8bc5ff">Todo Application is opening...</h1>
+  <div class="loader" style="border-top: 16px solid #8bc5ff"></div>
+</body>
+
+<body
+  class="container-fluid p-4"
+  style="background-color: #00521b"
+  *ngIf="isUser"
+>
+  <h6 class="text text-light float-right mt-2 p-2">
+    Welcome back, &nbsp;
+    <span class="text" style="color: #c6ffba">{{ userName | titlecase }}</span>
+  </h6>
+  <h1 class="text" style="color: #c6ffba">Todo Application is opening...</h1>
+  <div class="loader" style="border-top: 16px solid #c6ffba"></div>
+</body>

@@ -1,0 +1,31 @@
+body {
+  min-height: 91vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: -24px;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 2px;
+}
+
+#router-outlet {
+  background-color: #001932;
+  border-radius: 5px;
+  color: antiquewhite;
+  margin-bottom: 1px !important;
+}
+
+#router-outlet-user {
+  background-color: #00521b;
+  border-radius: 5px;
+  color: antiquewhite;
+  margin-bottom: 1px !important;
+}
+
+.jumbo {
+  padding: 10px;
+  height: 70px;
+}

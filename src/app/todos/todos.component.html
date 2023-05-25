@@ -1,0 +1,110 @@
+<div class="container-fluid" style="padding: 20px">
+  <div class="row">
+    <div
+      class="col-lg-6"
+      style="border-right: 1px solid rgba(120, 120, 120, 0.351) !important"
+    >
+      <h2 class="modal-header">Our Todos</h2>
+      <table class="table responsive-table" *ngIf="isTdoLoaded">
+        <thead class="table-head">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Created</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr
+            *ngFor="
+              let todos of todoList
+                | todo_filter : searchedKey
+                | paginate
+                  : {
+                      itemsPerPage: 3,
+                      currentPage: pageSize,
+                      totalItems: totalTodos
+                    }
+            "
+          >
+          <td>{{ todos.title }}</td>
+          <td>{{ todos.description }}</td>
+          <td>{{ todos.created }}</td>
+          <td>
+            <button class="bg-warning" (click)="onAction(todos)"><fa-icon [icon]="faPencilSquare"></fa-icon></button>
+            <button class="bg-danger" (click)="deleteTodo(todos)"><fa-icon [icon]="faTrash"></fa-icon></button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="loader" *ngIf="!isTdoLoaded">
+        <div class="d-flex align-items-center">
+          <div
+            class="spinner-border ml-auto"
+            role="status"
+            aria-hidden="false"
+          ></div>
+          <strong class="text text-light">Please wait</strong>
+        </div>
+      </div>
+      <div>
+        <div class="form-group" *ngIf="isTdoLoaded">
+          <label>Search here</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="searchedKey"
+            placeholder="Search title, description ..."
+          />
+        </div>
+      </div>
+      <pagination-controls
+        (pageChange)="pageSize = $event"
+        *ngIf="isTdoLoaded && searchedKey === ''"
+      ></pagination-controls>
+    </div>
+    <div class="col-lg-6">
+      <!-- loding animation>>>>
+         <div class="progress" *ngIf="!isTdoLoaded">
+        <div
+          class="progress-bar progress-bar-striped progress-bar-animated"
+          role="progressbar"
+          aria-valuenow="75"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="width: 62%"
+        ></div>
+      </div> -->
+      
+      <!-- comming animation>>>
+        <div class="loader-comming mt-4" *ngIf="isTdoLoaded">
+        <div class="d-flex align-items-center">
+          <span style="margin-right: 10px">Comming Soon</span>
+          <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div> -->
+      <h2 class="modal-header">Insert Todos</h2>
+      <div class="container">
+        <form>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" name="title" id="title" class="form-control" #title="ngModel" [(ngModel)]="myTodo.title"/>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea name="description" cols="30" rows="10" class="form-control" #desc="ngModel" [(ngModel)]="myTodo.description"></textarea>
+        </div>
+        <div class="form-group" >
+          <button type="button" class="btn btn-primary" (click)="onSubmit(title.value,desc.value)">
+            {{isEdit ? 'Update' : 'Add'}}
+          </button>
+          <a id="back-btn" *ngIf="isEdit" (click)="back()">Back</a> 
+          
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
