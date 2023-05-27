@@ -1,48 +1,61 @@
 <div class="row">
   <div class="col-lg 4">
     <div>
-        <div id="card">
-          <div id="card-header">Card Title</div>
-          <img id="card-image" src="https://img.freepik.com/premium-photo/light-background-with-stationary-cup-coffee-smartphone-mockup-woman-hands-write-blank-notepad-makes-list-purchases-wishes-birthday-holiday-flat-top-view_102209-255.jpg?w=2000" alt="Card Image">
-          <div id="card-content">
-            <p>This is the content of the card. It can contain text, images, or any other HTML elements.</p>
-          </div>
-          <div id="card-footer">
-            <span>Author: John Doe</span>
-            <span>Date: May 16, 2023</span>
-          </div>
+      <div id="card">
+        <div id="card-header">Why online todo?</div>
+        <img
+          id="card-image"
+          src="https://img.freepik.com/premium-photo/light-background-with-stationary-cup-coffee-smartphone-mockup-woman-hands-write-blank-notepad-makes-list-purchases-wishes-birthday-holiday-flat-top-view_102209-255.jpg?w=2000"
+          alt="Card Image"
+        />
+        <div id="card-content">
+          <small>
+            At work and at home, having a online to-do list may help you prioritize
+            your work and personal tasks. This allows you to organize and
+            complete the most crucial tasks first.
+          </small>
         </div>
+      </div>
     </div>
   </div>
 
   <div class="col-lg 4">
-    <div [class]="!isUser?'container clock-user':'container clock'">
+    <div [class]="!isUser ? 'container clock-user' : 'container clock'">
       <div class="hour-hand" [style.transform]="hourHandTransform"></div>
       <div class="minute-hand" [style.transform]="minuteHandTransform"></div>
-      <div class="second-hand" [style.transform]="secondHandTransform" [style]="!isUser? 'background-color: #c6ffba' : 'background-color: #8bc5ff'"></div>
+      <div
+        class="second-hand"
+        [style.transform]="secondHandTransform"
+        [style]="
+          !isUser ? 'background-color: #c6ffba' : 'background-color: #8bc5ff'
+        "
+      ></div>
       <div class="center"></div>
     </div>
     <div>
-        <p  align="center">Data : &nbsp;{{currentDate}}</p>
+      <p align="center">Data : &nbsp;{{ currentDate }}</p>
     </div>
   </div>
 
   <div class="col-lg 4">
-<body>
-  <h1>~Manage todos~</h1>
-  <div class="card">
-    <div [class]="!isUser?'card-header-users':'card-header'">App Description</div>
-    <div class="card-content">
-      <p>
-        Create, Read, Update and Delete your Todos in a proper and effecient way.
-      </p>
-    </div>
-    <div [class]="!isUser?'card-footer-users':'card-footer'">
-      <span>Author: Paulav Mukherjee</span>
-      <span>Date: May 16, 2023</span>
-    </div>
-  </div>
-</body>
-
+    <body>
+      <h3>~Better todo assistant~</h3>
+      <div class="card">
+        <div [class]="!isUser ? 'card-header-users' : 'card-header'">
+          May I help you?
+        </div>
+        <div class="card-content">
+          <p>
+            I can <strong>Create, Read, Update</strong> and <strong>Delete</strong> your Todos in a proper and effecient
+            way.
+          </p>
+        </div>
+        <div [class]="!isUser ? 'card-footer-users' : 'card-footer'">
+          <span align="center"
+            >Author: Paulav Mukherjee<br />Date: May 16, 2023
+          </span>
+        </div>
+      </div>
+    </body>
   </div>
 </div>
